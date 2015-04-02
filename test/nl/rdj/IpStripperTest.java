@@ -1,5 +1,5 @@
 
-package ipsplitter;
+package nl.rdj;
 
 import java.util.Arrays;
 import static org.hamcrest.CoreMatchers.is;
@@ -9,18 +9,18 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
 @RunWith(Parameterized.class)
-public class IpSplitterTest {
+public class IpStripperTest {
     private final String ip;
     private final String expected;
 
-    public IpSplitterTest(String ip, String expected) {
+    public IpStripperTest(String ip, String expected) {
         this.ip = ip;
         this.expected = expected;
     }
     
     @Test
     public void testIps() {
-        assertThat(new IpSplitter().split(ip), is(expected));
+        assertThat(new IpStripper().strip(ip), is(expected));
     }
     
     @Parameterized.Parameters
